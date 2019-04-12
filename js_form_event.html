@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Js form Events</title>
+  </head>
+  <body>
+    
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="text-center">Add to Cart System In JavaScript</h2>
+            </div>
+            <div class="card-body">
+              <p>Total : <span id="total">456</span> TK</p>
+              <form action="">
+                <div class="row">
+                  <div class="col-4">
+                    <input type="number" onkeyup="habibArtisan()" id="pay" placeholder="Payment Amount" class="form-control">
+                  </div>
+                  <div class="col-4">
+                    <input type="number" id="due" class="form-control" placeholder="Due Amount">
+                  </div>
+                  <div class="col-4">
+                    <input type="submit" class="btn btn-success form-control" value="Make Done">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    
+    function habibArtisan(){
+      var total = document.getElementById("total").innerText;
+      var pay = document.getElementById("pay").value;
+      var due = parseInt(total) - parseInt(pay);
+      document.getElementById("due").value = due;
+
+    }
+    
+    </script>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="text-center">Select System By JavaScript</h2>
+            </div>
+            <div class="card-body">
+              <form action="">
+                <div class="row">
+                  <div class="col-6">
+                    <select name="" onchange="make_field()" id="slect_id" class="form-control" id="">
+                      <option value="1">Input Field</option>
+                      <option value="2">Select Field</option>
+                      <option value="3">File Field</option>
+                    </select>
+                  </div>
+                  <div class="col-6" id="will_be_input_here">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <script>
+      function make_field(){
+        var selected_item = document.getElementById('slect_id').value;
+        
+        var make_input = "<input type='text' name='input_field' class='form-control'>";
+        var make_select = "<select name='select_field' class='form-control'><option value='2'>Value One</option><option value='2'>Value Two</option></select>";
+        var make_file = "<input name='file_field' type='file' class='form-control' style='height:auto'>";
+
+
+        if (selected_item == 1){
+
+            document.getElementById('will_be_input_here').innerHTML = make_input;
+
+        }else if(selected_item == 2){
+
+            document.getElementById('will_be_input_here').innerHTML = make_select;
+
+        }else{
+
+            document.getElementById('will_be_input_here').innerHTML = make_file;
+
+        }
+      }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
