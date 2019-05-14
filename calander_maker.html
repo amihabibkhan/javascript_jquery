@@ -45,13 +45,14 @@ span.off_day{
                           // inputed or given info
                           var off_day_list = [2,4,8];
                           var first_day_of_month = "May 1, 2019"; // formate = "May 1, 2019"
-                          var month_to_count_date = "2019, 5, 0"; // formate = "2019, 5, 0"
+                          var year = 2019;
+                          var month = 4;
 
                           // output string making start
                           var make_html = '<div class="days">';
 
                           // calculate total number of days of given mont
-                          var total_days = new Date(month_to_count_date).getDate();
+                          var total_days = new Date(year,month,0).getDate();
 
                           // creating date object of given month
                           var date_obj = new Date(first_day_of_month);
