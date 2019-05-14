@@ -1,0 +1,106 @@
+<style>
+
+.days,
+.days_of_weak{
+    display: flex;
+    justify-content: space-around;
+}
+.days_of_weak span{
+    border-bottom: 1px solid gray;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-left: 0;
+} 
+
+.days span{
+    border-bottom: 1px solid gray;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-left: 0;
+}
+span.off_day{
+    color: #fff;
+    background-color: #ff7200;
+}
+</style>
+
+
+<div class="calender">
+                      <div class="days_of_weak">
+                          <span>Sun</span>
+                          <span>Mon</span>
+                          <span>Tue</span>
+                          <span>Wed</span>
+                          <span>Thu</span>
+                          <span>Fri</span>
+                          <span>Sat</span>
+                      </div>
+                      <div id="days">
+
+                      </div>
+
+                      <script>
+                          // inputed or given info
+                          var off_day_list = [2,4,8];
+                          var first_day_of_month = "May 1, 2019"; // formate = "May 1, 2019"
+                          var month_to_count_date = "2019, 5, 0"; // formate = "2019, 5, 0"
+
+                          // output string making start
+                          var make_html = '<div class="days">';
+
+                          // calculate total number of days of given mont
+                          var total_days = new Date(month_to_count_date).getDate();
+
+                          // creating date object of given month
+                          var date_obj = new Date(first_day_of_month);
+
+                          // first day of month
+                          var space_before = date_obj.getDay();
+
+                          // day count for looping count and module by 7
+                          var day_count = 1;
+
+                          // calculate how many blank span need in last row
+                          var extra_days = 7-((total_days+space_before)%7);
+
+                          for (i = -(space_before - 1); i <= total_days; i++){
+                              // blank spans in first row
+                              if (i < 1){
+                                  make_html += "<span></span>";
+                                  day_count ++;
+                                  continue;
+                              }
+                              // check this day off or not
+                              var check_off_day = false;
+                              for (x in off_day_list){
+                                  if (off_day_list[x]==i){
+                                     check_off_day = true;
+                                  }
+                              }
+
+                              // main dates
+                              if (check_off_day && day_count % 7 == 0){
+                                  make_html += "<span class='off_day'>" + i + "</span></div><div class='days'>";
+                              }else if(day_count % 7 == 0) {
+                                  make_html += "<span>" + i + "</span></div><div class='days'>";
+                              }else if(check_off_day){
+                                  make_html += "<span class='off_day'>" + i + "</span>";
+                              }else{
+                                  make_html += "<span>" + i + "</span>";
+                              }
+
+                              // blank space in last row
+                              if (i == total_days && extra_days != 7){
+                                for (j = 1; j <= extra_days; j++){
+                                    make_html += "<span></span>";
+                                }
+                              }
+                              day_count++;
+                          }
+                          make_html += '</div>';
+                          document.getElementById('days').innerHTML = make_html; 
+                      </script>
+
+                  </div>
