@@ -1,0 +1,144 @@
+<div class="form-group">
+  <label for="">Give a Ratings</label><br>
+  <div class="ratings_input" id="rat_1">
+      <input type="radio" class="ratings" name="ratings" value="1">
+      <i class="far fa-star"></i>
+  </div>
+  <div class="ratings_input" id="rat_2">
+      <input type="radio" class="ratings" name="ratings" value="1">
+      <i class="far fa-star"></i>
+  </div>
+  <div class="ratings_input" id="rat_3">
+      <input type="radio" class="ratings" name="ratings" value="1">
+      <i class="far fa-star"></i>
+  </div>
+  <div class="ratings_input" id="rat_4">
+      <input type="radio" class="ratings" name="ratings" value="1">
+      <i class="far fa-star"></i>
+  </div>
+  <div class="ratings_input" id="rat_5">
+      <input type="radio" class="ratings" name="ratings" value="1">
+      <i class="far fa-star"></i>
+  </div>
+</div>
+
+<!-- css -->
+<style>
+.ratings_input{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+.ratings_input i{
+    color: #ff7200;
+    position: relative;
+    z-index: 0;
+    font-size: 30px;
+    transition: .2s;
+}
+.ratings_input i::after {
+    position: absolute;
+    content: '\f005';
+    font-weight: 900;
+    font-family: 'Font Awesome 5 Free';
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    color: transparent;
+}
+.ratings_input:hover i::after{
+    color: #ff7200;
+}
+.ratings_input input{
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    height: 30px;
+    width: 30px;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+</style>
+
+<!-- javascript (note that jquery required) -->
+<script>
+        $(function () {
+            // ratings 1
+            $("#rat_1").click(function(){
+                // remove class
+                $('#rat_1').find('i').removeClass('far');
+                $('#rat_2').find('i').removeClass('fas');
+                $('#rat_3').find('i').removeClass('fas');
+                $('#rat_4').find('i').removeClass('fas');
+                $('#rat_5').find('i').removeClass('fas');
+                // add class
+                $('#rat_1').find('i').addClass('fas');
+                $('#rat_2').find('i').addClass('far');
+                $('#rat_3').find('i').addClass('far');
+                $('#rat_4').find('i').addClass('far');
+                $('#rat_5').find('i').addClass('far');
+            });
+            // ratings 2
+            $("#rat_2").click(function(){
+                // remove class
+                $('#rat_1').find('i').removeClass('far');
+                $('#rat_2').find('i').removeClass('far');
+                $('#rat_3').find('i').removeClass('fas');
+                $('#rat_4').find('i').removeClass('fas');
+                $('#rat_5').find('i').removeClass('fas');
+                // add class
+                $('#rat_1').find('i').addClass('fas');
+                $('#rat_2').find('i').addClass('fas');
+                $('#rat_3').find('i').addClass('far');
+                $('#rat_4').find('i').addClass('far');
+                $('#rat_5').find('i').addClass('far');
+            });
+            // ratings 3
+            $("#rat_3").click(function(){
+                // remove class
+                $('#rat_1').find('i').removeClass('far');
+                $('#rat_2').find('i').removeClass('far');
+                $('#rat_3').find('i').removeClass('far');
+                $('#rat_4').find('i').removeClass('fas');
+                $('#rat_5').find('i').removeClass('fas');
+                // add class
+                $('#rat_1').find('i').addClass('fas');
+                $('#rat_2').find('i').addClass('fas');
+                $('#rat_3').find('i').addClass('fas');
+                $('#rat_4').find('i').addClass('far');
+                $('#rat_5').find('i').addClass('far');
+            });
+            // ratings 4
+            $("#rat_4").click(function(){
+                // remove class
+                $('#rat_1').find('i').removeClass('far');
+                $('#rat_2').find('i').removeClass('far');
+                $('#rat_3').find('i').removeClass('far');
+                $('#rat_4').find('i').removeClass('far');
+                $('#rat_5').find('i').removeClass('fas');
+                // add class
+                $('#rat_1').find('i').addClass('fas');
+                $('#rat_2').find('i').addClass('fas');
+                $('#rat_3').find('i').addClass('fas');
+                $('#rat_4').find('i').addClass('fas');
+                $('#rat_5').find('i').addClass('far');
+            });
+            // ratings 5
+            $("#rat_5").click(function(){
+                // remove class
+                $('#rat_1').find('i').removeClass('far');
+                $('#rat_2').find('i').removeClass('far');
+                $('#rat_3').find('i').removeClass('far');
+                $('#rat_4').find('i').removeClass('far');
+                $('#rat_5').find('i').removeClass('far');
+                // add class
+                $('#rat_1').find('i').addClass('fas');
+                $('#rat_2').find('i').addClass('fas');
+                $('#rat_3').find('i').addClass('fas');
+                $('#rat_4').find('i').addClass('fas');
+                $('#rat_5').find('i').addClass('fas');
+            });
+        });
+    </script>
